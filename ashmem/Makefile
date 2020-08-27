@@ -2,7 +2,7 @@ ccflags-y += -I$(src) -Wno-error=implicit-int -Wno-int-conversion
 obj-m := ashmem_linux.o
 ashmem_linux-y := deps.o ashmem.o
 
-KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build
+KERNEL_SRC ?= /lib/modules/4.15.0-112-generic/build
 VZ=	$(shell uname -r | grep vz)
 ifneq ($(VZ),)
 ccflags-y += -DVZKERNEL
