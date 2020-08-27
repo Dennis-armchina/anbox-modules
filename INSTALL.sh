@@ -9,8 +9,9 @@ sudo cp -rT ashmem /usr/src/anbox-ashmem-1
 sudo cp -rT binder /usr/src/anbox-binder-1
 
 # Finally use dkms to build and install:
-sudo dkms install anbox-ashmem/1
-sudo dkms install anbox-binder/1
+sudo dkms install anbox-ashmem/1 --no-prepare-kernel --kernelsourcedir /usr/src/linux-headers-4.15.0-112-generic/
+sudo dkms install anbox-binder/1 --no-prepare-kernel --kernelsourcedir /usr/src/linux-headers-4.15.0-112-generic/
+
 
 # Verify by loading these modules and checking the created devices:
 sudo modprobe ashmem_linux
